@@ -1,0 +1,17 @@
+# Runtime account and maintenance data
+/account-data/
+/maintenance-data/
+users.json
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files and logs
+*.tmp
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
