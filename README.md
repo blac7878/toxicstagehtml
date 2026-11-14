@@ -88,6 +88,10 @@ Commands affecting multiplayer are executed by the host. Changing maintenance mo
 - Client-side code is delivered to the browser. Do not put secrets in it or rely on it as a trusted place to enforce game rules.
 - Multiplayer uses public PeerJS signaling and peer-to-peer connections.
 
+## Development
+
+This project was built using AI-assisted, prompt-driven development ("vibe coding").
+
 ## License
 
 This project is licensed under the GNU General Public License version 3 only (GPL-3.0-only). See [LICENSE](./LICENSE) for the full license text.
