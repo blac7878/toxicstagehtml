@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^maintenance-data(?:/|$) - [F,NC,L]
+    RewriteRule ^index\.html$ maintenance-gate.php [NC,L]
+    RewriteRule ^$ maintenance-gate.php [L]
+</IfModule>
