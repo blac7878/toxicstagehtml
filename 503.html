@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b09">
+<meta name="description" content="Toxic Stage — przerwa konserwacyjna.">
+<title>503 — PRZERWA KONSERWACYJNA | Toxic Stage</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23070b09'/%3E%3Ctext x='32' y='46' font-size='43' text-anchor='middle' fill='%23b7ef45'%3E%E2%98%A3%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#070b09;--panel:#101a15;--line:rgba(183,239,69,.2);--fg:#edf7ef;--muted:#91a398;--lime:#b7ef45;--orange:#ff963d;--tone:var(--lime)}
+.card[data-tone="amber"]{--tone:#ffb454}
+.card[data-tone="blue"]{--tone:#71c8ff}
+.card[data-tone="red"]{--tone:#ff7068}
+.card[data-tone="lime"]{--tone:#b7ef45}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--fg);background:#050907}
+body{min-height:100vh;display:grid;place-items:center;padding:24px;overflow-x:hidden;background:radial-gradient(ellipse at 50% 10%,rgba(79,117,53,.23),transparent 36%),radial-gradient(ellipse at 88% 88%,rgba(255,130,45,.08),transparent 30%),linear-gradient(145deg,#050907,#0c1510 52%,#050806)}
+.grid{position:fixed;inset:0;pointer-events:none;opacity:.19;background-image:linear-gradient(rgba(183,239,69,.085) 1px,transparent 1px),linear-gradient(90deg,rgba(183,239,69,.085) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,#000,transparent 90%)}
+.scan{position:fixed;inset:0;pointer-events:none;opacity:.1;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.035) 4px,transparent 5px)}
+.card{position:relative;width:min(780px,100%);padding:clamp(26px,5.5vw,58px);overflow:hidden;text-align:center;border:1px solid color-mix(in srgb,var(--tone) 34%,transparent);border-radius:17px;background:linear-gradient(150deg,rgba(19,32,25,.98),rgba(7,13,10,.98) 74%);box-shadow:0 32px 110px rgba(0,0,0,.72),0 0 55px color-mix(in srgb,var(--tone) 8%,transparent),inset 0 1px rgba(255,255,255,.05)}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,transparent,var(--tone),var(--orange),transparent);opacity:.9}
+.card::after{content:"TS // SYSTEM RESPONSE";position:absolute;right:18px;top:17px;color:rgba(189,208,191,.32);font:800 8px ui-monospace,monospace;letter-spacing:.17em}
+.brand{display:flex;align-items:center;justify-content:center;gap:11px;color:var(--lime);font-size:11px;font-weight:950;letter-spacing:.28em;text-transform:uppercase}
+.brand-mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(183,239,69,.3);border-radius:9px;background:rgba(183,239,69,.07);color:var(--lime);font-size:22px;box-shadow:0 0 20px rgba(183,239,69,.08)}
+.eyebrow{margin-top:22px;color:#82958a;font:800 9px ui-monospace,monospace;letter-spacing:.24em}
+.code{margin:13px 0 0;color:#f7fff7;font-size:clamp(82px,18vw,158px);font-weight:1000;line-height:.9;letter-spacing:-.085em;text-shadow:0 0 35px color-mix(in srgb,var(--tone) 28%,transparent)}
+.rule{width:74px;height:3px;margin:25px auto;background:linear-gradient(90deg,var(--tone),var(--orange));border-radius:99px;box-shadow:0 0 18px color-mix(in srgb,var(--tone) 36%,transparent)}
+h1{margin:0 0 13px;color:var(--tone);font-size:clamp(20px,4.2vw,32px);font-weight:950;letter-spacing:.04em;text-transform:uppercase}
+p{max-width:540px;margin:0 auto;color:#bfcec3;font-size:15px;line-height:1.75}
+.tip{max-width:540px;margin:12px auto 0;color:#76897d;font-size:12px;line-height:1.65}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+a,button{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:11px 17px;border:1px solid rgba(183,207,188,.17);border-radius:7px;background:linear-gradient(145deg,#26382d,#142119);color:#e6f0e8;font:850 10px ui-monospace,monospace;letter-spacing:.09em;text-decoration:none;cursor:pointer;transition:transform .16s,border-color .16s,filter .16s}
+a.primary{border-color:color-mix(in srgb,var(--tone) 52%,transparent);background:linear-gradient(110deg,#d5ff7b,#a7de3b);color:#10170b;box-shadow:0 8px 24px rgba(145,201,54,.17)}
+a:hover,button:hover{transform:translateY(-2px);filter:brightness(1.09);border-color:color-mix(in srgb,var(--tone) 55%,transparent)}
+.footer{margin-top:32px;padding-top:14px;border-top:1px solid rgba(183,239,69,.12);color:#607468;font:800 8px ui-monospace,monospace;letter-spacing:.2em}
+form{max-width:380px;margin:20px auto 0;text-align:left}
+form[hidden]{display:none}
+label{display:block;margin-top:10px;color:#bfcec3;font-size:12px}
+input{display:block;width:100%;margin-top:6px;padding:11px 12px;border:1px solid rgba(183,207,188,.2);border-radius:7px;background:#050907;color:#fff;font:inherit}
+#loginStatus{min-height:1.5em;margin-top:8px;color:#bfcec3;font-size:12px;line-height:1.5}
+@media(max-width:520px){body{padding:12px}.card{padding:30px 20px}.card::after{display:none}.code{letter-spacing:-.06em}.actions{display:grid;grid-template-columns:1fr}a,button{width:100%}}
+@media(prefers-reduced-motion:no-preference){.card{animation:appear .35s ease-out both}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body data-code="503">
+<div class="grid"></div><div class="scan"></div>
+<main class="card" role="main" aria-labelledby="error-title" data-tone="amber">
+  <div class="brand"><span class="brand-mark">☣</span><span>TOXIC STAGE</span></div>
+  <div class="eyebrow">MAINTENANCE MODE · PRZERWA TECHNICZNA</div>
+  <div class="code" aria-label="Kod błędu 503">503</div>
+  <div class="rule"></div>
+  <h1 id="error-title">TRWAJĄ PRACE KONSERWACYJNE</h1>
+  <p>Toxic Stage jest chwilowo niedostępne. Właśnie aktualizujemy strefę — spróbuj ponownie za kilka minut.</p>
+  <div class="tip">Administratorzy mogą zalogować się poniżej, aby sprawdzić stronę podczas prac.</div>
+  <div class="actions">
+    <button class="primary" type="button" onclick="location.reload()">SPRAWDŹ PONOWNIE</button>
+    <button type="button" id="loginToggle" aria-expanded="false" aria-controls="adminLogin">ZALOGUJ ADMINISTRATORA</button>
+  </div>
+  <form id="adminLogin" hidden>
+    <label>Login
+      <input id="loginUsername" type="text" autocomplete="username" required>
+    </label>
+    <label>Hasło
+      <input id="loginPassword" type="password" autocomplete="current-password" required>
+    </label>
+    <button class="primary" type="submit">ZALOGUJ I OTWÓRZ GRĘ</button>
+    <div id="loginStatus" aria-live="polite"></div>
+  </form>
+  <div class="footer">TOXIC STAGE NETWORK · PRZERWA TECHNICZNA · HTTP 503</div>
+</main>
+<script>
+  const loginToggle = document.getElementById('loginToggle');
+  const loginForm = document.getElementById('adminLogin');
+  loginToggle.addEventListener('click', () => {
+    loginForm.hidden = !loginForm.hidden;
+    loginToggle.setAttribute('aria-expanded', String(!loginForm.hidden));
+    if (!loginForm.hidden) document.getElementById('loginUsername').focus();
+  });
+  loginForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    const status = document.getElementById('loginStatus');
+    const password = document.getElementById('loginPassword');
+    status.textContent = 'Sprawdzanie konta…';
+    try {
+      const response = await fetch('accounts.php?action=login', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: document.getElementById('loginUsername').value.trim(),
+          password: password.value
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      password.value = '';
+      if (!response.ok || result.ok !== true) throw new Error(result.error || ('HTTP ' + response.status));
+      if (!result.user || !['admin', 'root'].includes(result.user.role)) {
+        status.textContent = 'To konto nie ma uprawnień administratora.';
+        return;
+      }
+      status.textContent = 'Zalogowano. Otwieranie strony…';
+      location.replace('/');
+    } catch (error) {
+      status.textContent = 'Nie udało się zalogować: ' + error.message;
+    }
+  });
+</script>
+</body>
+</html>
